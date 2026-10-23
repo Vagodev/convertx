@@ -9,19 +9,19 @@ Uma aplicação web simples e prática para converter arquivos **XPS em PDF** di
 - 📄 Conversão de arquivos XPS para PDF.
 - 🌐 Interface web acessível pelo navegador.
 - 📦 Limite de tamanho de arquivo de 25 MB.
-- ⚙️ Conversão processada no servidor utilizando MuPDF.
+- ⚙️ Conversão utilizando MuPDF (`mutool`).
 - 🐍 Backend desenvolvido em Python com Flask.
 - 🚀 Deploy automatizado no Render integrado ao GitHub.
 
 ## 🛠️ Tecnologias utilizadas
 
-- **Python** — linguagem principal.
-- **Flask** — framework web.
-- **MuPDF (mutool)** — ferramenta utilizada na conversão dos arquivos.
-- **HTML, CSS e JavaScript** — interface do usuário.
-- **Docker** — configuração do ambiente de execução.
-- **Render** — hospedagem da aplicação.
-- **GitHub** — versionamento e gerenciamento do código-fonte.
+- Python
+- Flask
+- MuPDF
+- HTML, CSS e JavaScript
+- Docker
+- Render
+- GitHub
 
 ## 🚀 Como utilizar
 
@@ -30,15 +30,15 @@ Uma aplicação web simples e prática para converter arquivos **XPS em PDF** di
 3. Inicie a conversão.
 4. Baixe o arquivo PDF gerado.
 
-**Observação:** arquivos muito grandes podem ultrapassar o limite permitido pela aplicação.
+**Limite:** arquivos de até 25 MB.
 
 ## 💻 Como executar localmente
 
 ### Pré-requisitos
 
 - Python instalado.
-- Docker instalado, caso queira executar pelo contêiner.
-- MuPDF (`mutool`) disponível no ambiente de execução.
+- MuPDF (`mutool`) instalado e disponível no PATH, caso execute sem Docker.
+- Docker, opcionalmente, para executar a aplicação em um contêiner.
 
 ### Instalação
 
@@ -81,36 +81,36 @@ Inicie a aplicação:
 python app.py
 ```
 
-Depois, acesse no navegador o endereço local indicado pelo Flask, normalmente `http://127.0.0.1:5000`.
-
-> **Importante:** para executar localmente, o ambiente também precisa ter o executável `mutool` instalado e disponível no PATH. A imagem Docker do projeto pode ser utilizada para preparar o ambiente de execução, conforme configurado no `Dockerfile`.
+Abra `http://127.0.0.1:5000` no navegador, caso esse seja o endereço indicado pelo Flask.
 
 ## 📂 Estrutura do projeto
 
 ```text
 convertx/
-├── static/          # Arquivos estáticos da interface
-├── templates/       # Páginas HTML
-├── app.py           # Aplicação Flask e conversão
-├── Dockerfile       # Configuração do contêiner
-├── render.yaml      # Configuração de deploy no Render
-├── requirements.txt # Dependências Python
-└── .dockerignore    # Arquivos ignorados pelo Docker
+├── static/           # Arquivos estáticos da interface
+├── templates/        # Páginas HTML
+├── app.py            # Aplicação Flask e conversão
+├── Dockerfile        # Configuração do contêiner
+├── render.yaml       # Configuração de deploy no Render
+├── requirements.txt  # Dependências Python
+└── .dockerignore     # Arquivos ignorados pelo Docker
 ```
 
 ## 🔒 Privacidade e segurança
 
-Os arquivos enviados são processados pelo servidor para realizar a conversão. Não envie documentos confidenciais ou sensíveis sem antes verificar as condições de armazenamento e processamento da aplicação.
+Os arquivos enviados são processados pelo servidor para realizar a conversão. Evite enviar documentos confidenciais ou sensíveis sem verificar as condições de processamento e armazenamento da aplicação.
 
 ## 📌 Limitações
 
-- O tamanho máximo permitido por arquivo é de 25 MB.
-- A conversão depende do suporte do MuPDF ao arquivo enviado.
-- A disponibilidade e o tempo de resposta dependem do serviço de hospedagem.
+- Tamanho máximo de 25 MB por arquivo.
+- A conversão depende da compatibilidade do arquivo com o MuPDF.
+- A disponibilidade e o tempo de resposta dependem da hospedagem.
 
 ## 📄 Licença
 
-Este projeto ainda não especifica uma licença de distribuição. Caso queira permitir que outras pessoas utilizem, modifiquem ou redistribuam o código, adicione uma licença apropriada ao repositório.
+Este projeto está licenciado sob a **Licença MIT**. Você pode usar, copiar, modificar, mesclar, publicar, distribuir, sublicenciar e vender cópias do software, desde que mantenha o aviso de copyright e o texto da licença.
+
+Consulte o arquivo [LICENSE](LICENSE) para ver os termos completos.
 
 ---
 
