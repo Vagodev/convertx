@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Converta arquivos XPS para PDF gratuitamente no navegador.">
+  <title>Conversor XPS para PDF</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="page">
+    <header class="brand">
+      <div class="brand-icon" aria-hidden="true">⇄</div>
+      <div>
+        <p class="eyebrow">CONVERSOR DE DOCUMENTOS</p>
+        <h1>XPS para PDF</h1>
+      </div>
+    </header>
+
+    <section class="panel" aria-labelledby="main-title">
+      <div class="intro">
+        <div class="file-icon" aria-hidden="true">XPS</div>
+        <h2 id="main-title">Converta seu documento</h2>
+        <p>Envie um arquivo XPS e baixe a versão em PDF em poucos segundos.</p>
+      </div>
+
+      <form id="convert-form">
+        <label class="dropzone" id="dropzone" for="file-input">
+          <span class="upload-icon" aria-hidden="true">↑</span>
+          <strong id="file-label">Arraste seu arquivo aqui</strong>
+          <span class="subtext">ou clique para selecionar no computador</span>
+          <span class="file-limit">Formato .xps · Máximo de 25 MB</span>
+          <input id="file-input" name="file" type="file" accept=".xps,application/vnd.ms-xpsdocument" required>
+        </label>
+
+        <div id="selected-file" class="selected-file" hidden>
+          <span class="selected-icon" aria-hidden="true">▤</span>
+          <span id="selected-name"></span>
+          <button type="button" id="remove-file" class="remove-button" aria-label="Remover arquivo">×</button>
+        </div>
+
+        <button class="convert-button" id="convert-button" type="submit">
+          <span id="button-text">Converter para PDF</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+
+      <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+    </section>
+
+    <section class="features" aria-label="Informações">
+      <div class="feature">
+        <span aria-hidden="true">⚡</span>
+        <div><strong>Simples e rápido</strong><p>Sem cadastro ou instalação.</p></div>
+      </div>
+      <div class="feature">
+        <span aria-hidden="true">🔒</span>
+        <div><strong>Arquivos temporários</strong><p>Os arquivos são removidos ao fim da conversão.</p></div>
+      </div>
+    </section>
+
+    <footer>Conversor XPS para PDF · Seus arquivos não ficam guardados no servidor.</footer>
+  </main>
+  <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+</html>
